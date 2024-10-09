@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y python3-distutils  # Install distutils
+        sudo apt-get install -y python3-distutils  # Ensure distutils is installed
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
