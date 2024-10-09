@@ -21,6 +21,9 @@ jobs:
       with:
         python-version: '3.9'  # Replace with the Python version you're using
 
+    - name: Check Python version
+      run: python3.9 --version
+
     - name: Install dependencies
       run: |
         # sudo apt-get update
