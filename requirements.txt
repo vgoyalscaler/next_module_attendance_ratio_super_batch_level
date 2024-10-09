@@ -1,4 +1,3 @@
-distutils
 setuptools
 wheel
 pandas # ==2.2.2
