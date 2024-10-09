@@ -24,6 +24,11 @@ jobs:
     - name: Check Python version
       run: python3.9 --version
 
+    - name: Check enabled repositories
+      run: |
+        sudo apt-get update
+        apt-cache policy
+
     - name: Install dependencies
       run: |
         # sudo apt-get update
