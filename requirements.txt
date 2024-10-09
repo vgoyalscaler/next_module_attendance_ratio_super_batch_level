@@ -1,4 +1,4 @@
-setuptools
+setuptools>=65.5.0
 wheel
 pandas # ==2.2.2
 scikit-learn==1.0.2
