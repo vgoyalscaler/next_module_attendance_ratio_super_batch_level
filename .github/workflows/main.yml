@@ -30,5 +30,11 @@ jobs:
         # pip install scikit-learn==1.0.2 --prefer-binary
         pip install -r requirements.txt
     
+   # - name: Run Streamlit
+   #   run: streamlit run next_module_attendance_ratio_super_batch_level.py
+
     - name: Run Streamlit
-      run: streamlit run next_module_attendance_ratio_super_batch_level.py
+      run: |
+        nohup streamlit run next_module_attendance_ratio_super_batch_level.py &
+        sleep 5  # Wait for 5 seconds to allow the Streamlit app to start
+
