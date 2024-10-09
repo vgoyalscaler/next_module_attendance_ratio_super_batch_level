@@ -1,7 +1,10 @@
-name: Deploy Streamlit App
+name: CI
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
 
@@ -10,21 +13,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Check out repository
       uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.12'  # Change to 3.11 or 3.10
+        python-version: '3.12'  # Replace with the Python version you're using
 
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y python3-distutils  # Ensure distutils is installed
-        python3 -c "import distutils"
+        sudo apt-get install python3-distutils -y  # Installs distutils
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-
+    
     - name: Run Streamlit
-      run: streamlit run next_module_attendance_ratio_super_batch_level.py  # Replace with your main script name
+      run: streamlit run next_module_attendance_ratio_super_batch_level.py
