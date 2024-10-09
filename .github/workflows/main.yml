@@ -29,6 +29,11 @@ jobs:
         sudo apt-get update
         apt-cache policy
 
+    - name: Enable universe repository
+      run: |
+        sudo add-apt-repository universe
+        sudo apt-get update
+
     - name: Install dependencies
       run: |
         # sudo apt-get update
