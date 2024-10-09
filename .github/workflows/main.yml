@@ -48,8 +48,8 @@ jobs:
    # - name: Run Streamlit
    #   run: streamlit run next_module_attendance_ratio_super_batch_level.py
 
-    - name: Run Streamlit
+    - name: Run Streamlit with Python 3.9
       run: |
-        nohup streamlit run next_module_attendance_ratio_super_batch_level.py &
+        nohup python -m streamlit run next_module_attendance_ratio_super_batch_level.py &
         sleep 5  # Wait for 5 seconds to allow the Streamlit app to start
 
