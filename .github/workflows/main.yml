@@ -53,12 +53,23 @@ jobs:
         pip install --upgrade pip
         # pip install scikit-learn==1.0.2 --prefer-binary
         pip install -r requirements.txt
+
+    - name: Create and activate virtual environment
+      run: |
+        python3.9 -m venv venv
+        source venv/bin/activate
+        pip install -r requirements.txt
+
+    - name: Run Streamlit
+      run: |
+        nohup venv/bin/python -m streamlit run next_module_attendance_ratio_super_batch_level.py &
+        sleep 5  # Wait for 5 seconds to allow the Streamlit app to start
     
    # - name: Run Streamlit
    #   run: streamlit run next_module_attendance_ratio_super_batch_level.py
 
-    - name: Run Streamlit with Python 3.9
-      run: |
-        nohup python3.9 -m streamlit run next_module_attendance_ratio_super_batch_level.py &
-        sleep 5  # Wait for 5 seconds to allow the Streamlit app to start
+    #- name: Run Streamlit with Python 3.9
+     # run: |
+      #  nohup python3.9 -m streamlit run next_module_attendance_ratio_super_batch_level.py &
+      #  sleep 5  # Wait for 5 seconds to allow the Streamlit app to start
 
