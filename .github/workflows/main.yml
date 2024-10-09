@@ -21,6 +21,15 @@ jobs:
       with:
         python-version: '3.9'  # Replace with the Python version you're using
 
+    - name: Verify Python installation
+      run: |
+        echo "Python Path:"
+        which python
+        echo "Python Version:"
+        python --version
+        echo "Pip Version:"
+        pip --version
+
     - name: Check Python version
       run: python3.9 --version
 
