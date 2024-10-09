@@ -16,7 +16,7 @@ jobs:
     - name: Check out repository
       uses: actions/checkout@v2
 
-    - name: Set up Python
+    - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
         python-version: '3.9'  # Replace with the Python version you're using
@@ -28,7 +28,8 @@ jobs:
       run: |
         # sudo apt-get update
         # sudo apt-get install python3-distutils -y  # Installs distutils
-        sudo apt install python3.9-distutils
+        sudo apt-get update
+        sudo apt-get install python3.9-distutils -y
         #python -m 
         pip install --upgrade pip
         # pip install scikit-learn==1.0.2 --prefer-binary
