@@ -131,6 +131,7 @@ def main():
             x_sm = sm.add_constant(df)
 
             y_pred = train_results.predict(x_sm)
+            y_pred = y_pred.round(3)
             y_pred = y_pred.rename('next_module_attendance_ratio_per_eligible_learners')
 
             df = pd.concat([df_initial,y_pred], axis=1)
