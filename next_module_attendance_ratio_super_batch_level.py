@@ -117,6 +117,9 @@ def main():
     
     if uploaded_csv:
         df = pd.read_csv(uploaded_csv)
+        df = df[['super_batch_name', 'batch_module_order', 'instructor_email', 'next_module_name', 
+                'first_three_avg_rating', 'first_three_live_attendance_ratio', 'first_3_total_assignment_problems_solved_ratio',
+                'learners_with_atleast_1_resume_sent', 'learners_with_atleast_1_offer', 'mbe_eligible_flag', 'track']]
         st.write("Data Uploaded:")
         st.write(df)
       
